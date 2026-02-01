@@ -1,0 +1,213 @@
+{
+  "name": "khaos-jex",
+  "displayName": "Khaos JEX",
+  "description": "Language support for the JEX JSON transformation DSL",
+  "version": "0.2.0",
+  "publisher": "khaos",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khaos/Khaos.Jex"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:jex"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "jex",
+        "aliases": [
+          "JEX",
+          "jex"
+        ],
+        "extensions": [
+          ".jex"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/jex-light.svg",
+          "dark": "./icons/jex-dark.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "jex",
+        "scopeName": "source.jex",
+        "path": "./syntaxes/jex.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "jex",
+        "path": "./snippets/jex.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "jex.runScript",
+        "title": "Run Script",
+        "category": "JEX",
+        "icon": "$(play)"
+      },
+      {
+        "command": "jex.runScriptWithInput",
+        "title": "Run Script with Input...",
+        "category": "JEX",
+        "icon": "$(play-circle)"
+      },
+      {
+        "command": "jex.showPreview",
+        "title": "Show Preview Panel",
+        "category": "JEX",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "jex.createInputFile",
+        "title": "Create Input File",
+        "category": "JEX",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "jex.showOutput",
+        "title": "Show Output",
+        "category": "JEX",
+        "icon": "$(output)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "jex.runScript",
+          "when": "resourceLangId == jex",
+          "group": "navigation@1"
+        },
+        {
+          "command": "jex.showPreview",
+          "when": "resourceLangId == jex",
+          "group": "navigation@2"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "jex.runScript",
+          "when": "resourceLangId == jex",
+          "group": "jex@1"
+        },
+        {
+          "command": "jex.runScriptWithInput",
+          "when": "resourceLangId == jex",
+          "group": "jex@2"
+        },
+        {
+          "command": "jex.showPreview",
+          "when": "resourceLangId == jex",
+          "group": "jex@3"
+        },
+        {
+          "command": "jex.createInputFile",
+          "when": "resourceLangId == jex",
+          "group": "jex@4"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "jex.runScript",
+          "when": "resourceLangId == jex"
+        },
+        {
+          "command": "jex.runScriptWithInput",
+          "when": "resourceLangId == jex"
+        },
+        {
+          "command": "jex.showPreview",
+          "when": "resourceLangId == jex"
+        },
+        {
+          "command": "jex.createInputFile",
+          "when": "resourceLangId == jex"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "jex.runScript",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "resourceLangId == jex"
+      },
+      {
+        "command": "jex.showPreview",
+        "key": "ctrl+shift+p",
+        "mac": "cmd+shift+p",
+        "when": "resourceLangId == jex && !inQuickOpen"
+      }
+    ],
+    "configuration": {
+      "title": "JEX",
+      "properties": {
+        "jex.languageServer.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable the JEX Language Server for advanced features"
+        },
+        "jex.languageServer.path": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the JEX Language Server executable (uses bundled server if empty)"
+        },
+        "jex.cli.path": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the JEX CLI executable (uses bundled CLI if empty)"
+        },
+        "jex.preview.autoRun": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically re-run script when files change in preview panel"
+        },
+        "jex.functionManifest.paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Additional paths to search for function manifest files (*.jex.functions.json)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "test:coverage": "nyc npm run test"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.54.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

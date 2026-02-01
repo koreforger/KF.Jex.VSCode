@@ -1,0 +1,59 @@
+{
+  "$schema": "./schemas/jex.functions.schema.json",
+  "functions": [
+    {
+      "name": "lookupCustomer",
+      "signature": "lookupCustomer(customerId)",
+      "description": "Looks up customer information by ID from the database",
+      "minArgs": 1,
+      "maxArgs": 1,
+      "parameters": [
+        {
+          "name": "customerId",
+          "type": "string",
+          "description": "The customer ID to look up"
+        }
+      ]
+    },
+    {
+      "name": "validateEmail",
+      "signature": "validateEmail(email)",
+      "description": "Validates an email address format and checks if domain exists",
+      "minArgs": 1,
+      "maxArgs": 1,
+      "parameters": [
+        {
+          "name": "email",
+          "type": "string",
+          "description": "The email address to validate"
+        }
+      ]
+    },
+    {
+      "name": "formatCurrency",
+      "signature": "formatCurrency(amount, currencyCode?, locale?)",
+      "description": "Formats a number as currency with proper locale formatting",
+      "minArgs": 1,
+      "maxArgs": 3,
+      "parameters": [
+        {
+          "name": "amount",
+          "type": "number",
+          "description": "The numeric amount to format"
+        },
+        {
+          "name": "currencyCode",
+          "type": "string",
+          "description": "ISO 4217 currency code (e.g., 'USD', 'EUR')",
+          "optional": true
+        },
+        {
+          "name": "locale",
+          "type": "string",
+          "description": "Locale for formatting (e.g., 'en-US', 'de-DE')",
+          "optional": true
+        }
+      ]
+    }
+  ]
+}

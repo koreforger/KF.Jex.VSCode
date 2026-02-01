@@ -1,0 +1,168 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "JEX",
+  "scopeName": "source.jex",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#function-declaration" },
+    { "include": "#keywords" },
+    { "include": "#control-keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#builtins" },
+    { "include": "#jsonpath" },
+    { "include": "#function-call" },
+    { "include": "#operators" },
+    { "include": "#punctuation" },
+    { "include": "#identifiers" }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.double-slash.jex",
+      "match": "//.*$"
+    },
+    "function-declaration": {
+      "begin": "(%func)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.jex" },
+        "2": { "name": "entity.name.function.jex" }
+      },
+      "end": "\\)",
+      "patterns": [
+        {
+          "name": "variable.parameter.jex",
+          "match": "[a-zA-Z_][a-zA-Z0-9_]*"
+        },
+        {
+          "name": "punctuation.separator.parameter.jex",
+          "match": ","
+        }
+      ]
+    },
+    "keywords": {
+      "name": "keyword.control.jex",
+      "match": "%(let|set|if|then|else|do|end|endfunc|foreach|in|break|continue|return|func|to)\\b"
+    },
+    "control-keywords": {
+      "name": "keyword.control.flow.jex",
+      "match": "\\b(true|false|null)\\b"
+    },
+    "strings": {
+      "name": "string.quoted.double.jex",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.jex",
+          "match": "\\\\(?:[\"\\\\bfnrt]|u[0-9a-fA-F]{4})"
+        },
+        {
+          "name": "string.interpolated.jsonpath.jex",
+          "match": "\\$\\.[a-zA-Z0-9_.\\[\\]\\*@?()']+"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.decimal.jex",
+          "match": "-?\\d+\\.\\d+([eE][+-]?\\d+)?"
+        },
+        {
+          "name": "constant.numeric.integer.jex",
+          "match": "-?\\d+"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "variable.language.input.jex",
+          "match": "\\$in\\b"
+        },
+        {
+          "name": "variable.language.output.jex",
+          "match": "\\$out\\b"
+        },
+        {
+          "name": "variable.language.meta.jex",
+          "match": "\\$meta\\b"
+        }
+      ]
+    },
+    "jsonpath": {
+      "name": "string.interpolated.jsonpath.jex",
+      "match": "\\$\\.[a-zA-Z0-9_.\\[\\]\\*@?()']+"
+    },
+    "function-call": {
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()",
+      "captures": {
+        "1": { "name": "entity.name.function.call.jex" }
+      }
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.jex",
+          "match": "(==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.logical.jex",
+          "match": "(&&|\\|\\||!)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.jex",
+          "match": "(\\+|-|\\*|/|%)"
+        },
+        {
+          "name": "keyword.operator.assignment.jex",
+          "match": "="
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.definition.block.begin.jex",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.definition.block.end.jex",
+          "match": "\\}"
+        },
+        {
+          "name": "punctuation.definition.array.begin.jex",
+          "match": "\\["
+        },
+        {
+          "name": "punctuation.definition.array.end.jex",
+          "match": "\\]"
+        },
+        {
+          "name": "punctuation.terminator.statement.jex",
+          "match": ";"
+        },
+        {
+          "name": "punctuation.separator.comma.jex",
+          "match": ","
+        },
+        {
+          "name": "punctuation.separator.colon.jex",
+          "match": ":"
+        },
+        {
+          "name": "punctuation.definition.group.begin.jex",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.definition.group.end.jex",
+          "match": "\\)"
+        }
+      ]
+    },
+    "identifiers": {
+      "name": "variable.other.jex",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+    }
+  }
+}

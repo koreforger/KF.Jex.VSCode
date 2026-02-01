@@ -1,0 +1,53 @@
+// Sample JEX Transformation Script
+// Demonstrates various JEX language features
+
+// Extract values from input
+%let customerId = jp1($in, "$.customer.id");
+%let customerName = jp1($in, "$.customer.name");
+%let orders = jpAll($in, "$.orders[*]");
+
+// Set basic output structure
+%set $.processedAt = formatDate(now(), "yyyy-MM-dd'T'HH:mm:ss'Z'");
+%set $.customer.id = customerId;
+%set $.customer.displayName = upper(customerName);
+
+// Process each order
+%let totalAmount = 0;
+%foreach order %in orders %do;
+    %let orderId = jp1(order, "$.id");
+    %let amount = jp1(order, "$.amount");
+    %let status = jp1(order, "$.status");
+    
+    // Only include completed orders
+    %if (status == "completed") %then %do;
+        %let orderSummary = {
+            "id": orderId,
+            "amount": amount,
+            "formattedAmount": concat("$", toString(amount))
+        };
+        push($.orders, orderSummary);
+        %let totalAmount = totalAmount + amount;
+    %end;
+%end;
+
+// Set totals
+%set $.summary.orderCount = length($.orders);
+%set $.summary.totalAmount = totalAmount;
+
+// Conditional logic
+%if (totalAmount > 1000) %then %do;
+    %set $.summary.tier = "gold";
+%end;
+%else %do;
+    %set $.summary.tier = "standard";
+%end;
+
+// User-defined function
+%func calculateDiscount(amount, tier);
+    %if (&tier == "gold") %then %do;
+        %return &amount * 0.1;
+    %end;
+    %return &amount * 0.05;
+%endfunc;
+
+%set $.summary.discount = calculateDiscount(totalAmount, $.summary.tier);

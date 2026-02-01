@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JEX Function Manifest",
+  "description": "Describes host-registered functions for JEX scripts",
+  "type": "object",
+  "properties": {
+    "functions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Function name as used in JEX scripts"
+          },
+          "signature": {
+            "type": "string",
+            "description": "Function signature for display (e.g., 'myFunc(a, b)')"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of what the function does"
+          },
+          "minArgs": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "Minimum number of required arguments"
+          },
+          "maxArgs": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Maximum number of arguments (omit for unlimited)"
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Parameter name"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Parameter type (string, number, boolean, json, any)"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Parameter description"
+                },
+                "optional": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Whether the parameter is optional"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

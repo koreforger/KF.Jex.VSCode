@@ -1,0 +1,20 @@
+.vscode/**
+.vscode-test/**
+src/**
+scripts/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
+!out/**
+# Include the Language Server
+!server/**
+# Include the CLI
+!cli/**
+# Exclude test files
+out/test/**
+# Exclude dependencies dev files
+node_modules/**

@@ -1,0 +1,165 @@
+{
+  "JEX Let Statement": {
+    "prefix": ["let", "%let"],
+    "body": [
+      "%let ${1:variableName} = ${2:expression};"
+    ],
+    "description": "Declare a variable"
+  },
+  "JEX Set Statement": {
+    "prefix": ["set", "%set"],
+    "body": [
+      "%set \\$.${1:path} = ${2:expression};"
+    ],
+    "description": "Set a value in the output document"
+  },
+  "JEX If Statement": {
+    "prefix": ["if", "%if"],
+    "body": [
+      "%if (${1:condition}) %then %do;",
+      "\t$0",
+      "%end;"
+    ],
+    "description": "If conditional statement"
+  },
+  "JEX If-Else Statement": {
+    "prefix": ["ifelse", "%ifelse"],
+    "body": [
+      "%if (${1:condition}) %then %do;",
+      "\t$2",
+      "%end;",
+      "%else %do;",
+      "\t$0",
+      "%end;"
+    ],
+    "description": "If-else conditional statement"
+  },
+  "JEX Foreach Loop": {
+    "prefix": ["foreach", "%foreach"],
+    "body": [
+      "%foreach ${1:item} %in ${2:collection} %do;",
+      "\t$0",
+      "%end;"
+    ],
+    "description": "Loop over a collection"
+  },
+  "JEX Do Loop": {
+    "prefix": ["doloop", "%doloop"],
+    "body": [
+      "%do ${1:i} = ${2:0} %to ${3:10} %do;",
+      "\t$0",
+      "%end;"
+    ],
+    "description": "Numeric loop from start to end"
+  },
+  "JEX Function Declaration": {
+    "prefix": ["func", "%func"],
+    "body": [
+      "%func ${1:functionName}(${2:params});",
+      "\t$0",
+      "\t%return ${3:result};",
+      "%endfunc;"
+    ],
+    "description": "Declare a function"
+  },
+  "JEX Return Statement": {
+    "prefix": ["return", "%return"],
+    "body": [
+      "%return ${1:expression};"
+    ],
+    "description": "Return from a function"
+  },
+  "JEX Break Statement": {
+    "prefix": ["break", "%break"],
+    "body": [
+      "%break;"
+    ],
+    "description": "Break out of a loop"
+  },
+  "JEX Continue Statement": {
+    "prefix": ["continue", "%continue"],
+    "body": [
+      "%continue;"
+    ],
+    "description": "Continue to next loop iteration"
+  },
+  "JEX JSONPath Single": {
+    "prefix": ["jp1", "jsonpath"],
+    "body": [
+      "jp1(${1:\\$in}, \"\\$.${2:path}\")"
+    ],
+    "description": "Extract single value using JSONPath"
+  },
+  "JEX JSONPath All": {
+    "prefix": ["jpAll", "jsonpathall"],
+    "body": [
+      "jpAll(${1:\\$in}, \"\\$.${2:path}\")"
+    ],
+    "description": "Extract all matching values using JSONPath"
+  },
+  "JEX Transform Template": {
+    "prefix": ["transform", "jextemplate"],
+    "body": [
+      "// JEX Transformation Script",
+      "// Input: \\$in, Output: \\$out",
+      "",
+      "// Extract values from input",
+      "%let ${1:value} = jp1(\\$in, \"\\$.${2:path}\");",
+      "",
+      "// Set output values",
+      "%set \\$.${3:outputPath} = ${1:value};",
+      "",
+      "$0"
+    ],
+    "description": "Basic JEX transformation template"
+  },
+  "JEX Conditional Mapping": {
+    "prefix": ["condmap", "conditionalmap"],
+    "body": [
+      "%let ${1:source} = jp1(\\$in, \"\\$.${2:sourcePath}\");",
+      "%if (!isNull(${1:source})) %then %do;",
+      "\t%set \\$.${3:targetPath} = ${1:source};",
+      "%end;"
+    ],
+    "description": "Conditionally map a value if not null"
+  },
+  "JEX Array Processing": {
+    "prefix": ["arrayproc", "processarray"],
+    "body": [
+      "%let ${1:items} = jpAll(\\$in, \"\\$.${2:arrayPath}\");",
+      "%foreach ${3:item} %in ${1:items} %do;",
+      "\t%let ${4:transformed} = ${5:item};",
+      "\tpush(\\$.${6:outputArray}, ${4:transformed});",
+      "%end;"
+    ],
+    "description": "Process an array and push to output"
+  },
+  "JEX String Concatenation": {
+    "prefix": ["strcat", "stringconcat"],
+    "body": [
+      "concat(${1:string1}, \"${2: }\", ${3:string2})"
+    ],
+    "description": "Concatenate strings"
+  },
+  "JEX Null Coalesce": {
+    "prefix": ["coalesce", "nullcoalesce"],
+    "body": [
+      "coalesce(${1:value}, ${2:defaultValue})"
+    ],
+    "description": "Return first non-null value"
+  },
+  "JEX Date Format": {
+    "prefix": ["dateformat", "formatdate"],
+    "body": [
+      "formatDate(${1:dateValue}, \"${2:yyyy-MM-dd}\")"
+    ],
+    "description": "Format a date value"
+  },
+  "JEX IIF (Inline If)": {
+    "prefix": ["iif", "inlineif"],
+    "body": [
+      "iif(${1:condition}, ${2:trueValue}, ${3:falseValue})"
+    ],
+    "description": "Inline if expression"
+  }
+}
