@@ -241,13 +241,13 @@ function startLanguageServer(context: vscode.ExtensionContext): void {
     if (!serverPath) {
         // Use bundled server
         serverPath = context.asAbsolutePath(
-            path.join('server', 'Khaos.JEX.LanguageServer.exe')
+            path.join('server', 'KhaosKode.JEX.LanguageServer.exe')
         );
         
         // On non-Windows, use the dll with dotnet
         if (process.platform !== 'win32') {
             serverPath = context.asAbsolutePath(
-                path.join('server', 'Khaos.JEX.LanguageServer.dll')
+                path.join('server', 'KhaosKode.JEX.LanguageServer.dll')
             );
         }
     }

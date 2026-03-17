@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "Khaos.JEX.LanguageServer/1.0.0": {
+      "KhaosKode.JEX.LanguageServer/1.0.0": {
         "dependencies": {
-          "Khaos.JEX": "1.0.0",
+          "KhaosKode.JEX": "1.0.0",
           "Microsoft.Extensions.Logging.Console": "9.0.0",
           "OmniSharp.Extensions.LanguageServer": "0.19.9"
         },
         "runtime": {
-          "Khaos.JEX.LanguageServer.dll": {}
+          "KhaosKode.JEX.LanguageServer.dll": {}
         }
       },
       "MediatR/8.1.0": {
@@ -363,12 +363,12 @@
           }
         }
       },
-      "Khaos.JEX/1.0.0": {
+      "KhaosKode.JEX/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.4"
         },
         "runtime": {
-          "Khaos.JEX.dll": {
+          "KhaosKode.JEX.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -377,7 +377,7 @@
     }
   },
   "libraries": {
-    "Khaos.JEX.LanguageServer/1.0.0": {
+    "KhaosKode.JEX.LanguageServer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -543,7 +543,7 @@
       "path": "system.reactive/6.0.0",
       "hashPath": "system.reactive.6.0.0.nupkg.sha512"
     },
-    "Khaos.JEX/1.0.0": {
+    "KhaosKode.JEX/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

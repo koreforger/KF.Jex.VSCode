@@ -55,7 +55,7 @@ Write-Host "  File: $($vsixFile.Name)" -ForegroundColor Gray
 
 if ($Force) {
     Write-Host "  Uninstalling existing version..." -ForegroundColor Gray
-    code --uninstall-extension khaos.khaos-jex 2>$null
+    code --uninstall-extension KhaosKode.khaos-jex 2>$null
 }
 
 code --install-extension $vsixFile.FullName

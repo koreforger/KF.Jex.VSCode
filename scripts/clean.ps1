@@ -57,7 +57,7 @@ try {
     }
 
     # Clean Language Server build artifacts
-    $serverDir = Join-Path $jexRootDir "src" "Khaos.JEX.LanguageServer"
+    $serverDir = Join-Path $jexRootDir "src" "KhaosKode.JEX.LanguageServer"
     $serverFolders = @(
         (Join-Path $serverDir "bin"),
         (Join-Path $serverDir "obj")
@@ -71,7 +71,7 @@ try {
     }
 
     # Clean Language Server Test artifacts
-    $serverTestDir = Join-Path $jexRootDir "tests" "Khaos.JEX.LanguageServer.Tests"
+    $serverTestDir = Join-Path $jexRootDir "tests" "KhaosKode.JEX.LanguageServer.Tests"
     $testFolders = @(
         (Join-Path $serverTestDir "bin"),
         (Join-Path $serverTestDir "obj")

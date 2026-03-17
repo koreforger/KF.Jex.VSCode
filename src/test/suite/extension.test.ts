@@ -5,7 +5,7 @@ suite('Extension Test Suite', () => {
     vscode.window.showInformationMessage('Starting JEX extension tests');
 
     test('Extension should be present', () => {
-        const extension = vscode.extensions.getExtension('khaos.khaos-jex');
+        const extension = vscode.extensions.getExtension('KhaosKode.khaos-jex');
         // Extension may not be found in test environment without proper setup
         // This is a sanity check
         assert.ok(true, 'Test suite is running');

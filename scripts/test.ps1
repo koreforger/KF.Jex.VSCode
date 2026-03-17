@@ -31,8 +31,8 @@ try {
     $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
     $rootDir = Split-Path -Parent $scriptDir
     $jexRootDir = Split-Path -Parent $rootDir
-    $vsCodeDir = Join-Path $jexRootDir "Khaos.Jex.VSCode"
-    $serverTestDir = Join-Path $jexRootDir "tests" "Khaos.JEX.LanguageServer.Tests"
+    $vsCodeDir = Join-Path $jexRootDir "KhaosKode.Jex.VSCode"
+    $serverTestDir = Join-Path $jexRootDir "tests" "KhaosKode.JEX.LanguageServer.Tests"
     $testResultsDir = Join-Path $jexRootDir "TestResults"
 
     Write-Host "========================================" -ForegroundColor Cyan

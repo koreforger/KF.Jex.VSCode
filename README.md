@@ -117,6 +117,6 @@ MIT License - See [LICENSE.md](LICENSE.md)
 
 ## Related Projects
 
-- [Khaos.JEX](../Khaos.Jex/) - Core JEX library
-- [Khaos.JEX.LanguageServer](../Khaos.JEX.LanguageServer/) - Language Server implementation
-- [Khaos.JEX.Cli](../Khaos.JEX.Cli/) - Command-line interface
+- [KhaosKode.JEX](../KhaosKode.Jex/) - Core JEX library
+- [KhaosKode.JEX.LanguageServer](../KhaosKode.JEX.LanguageServer/) - Language Server implementation
+- [KhaosKode.JEX.Cli](../KhaosKode.JEX.Cli/) - Command-line interface

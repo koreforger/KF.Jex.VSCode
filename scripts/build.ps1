@@ -26,8 +26,8 @@ try {
     $rootDir = Split-Path -Parent $scriptDir
     $vsCodeDir = $rootDir
     $workspaceRoot = Split-Path -Parent $rootDir
-    $serverProjectDir = Join-Path $workspaceRoot "Khaos.JEX.LanguageServer" "src" "Khaos.JEX.LanguageServer"
-    $cliProjectDir = Join-Path $workspaceRoot "Khaos.JEX.Cli" "src" "Khaos.JEX.Cli"
+    $serverProjectDir = Join-Path $workspaceRoot "KhaosKode.JEX.LanguageServer" "src" "KhaosKode.JEX.LanguageServer"
+    $cliProjectDir = Join-Path $workspaceRoot "KhaosKode.JEX.Cli" "src" "KhaosKode.JEX.Cli"
 
     Write-Host "========================================" -ForegroundColor Cyan
     Write-Host "Building JEX VS Code Extension" -ForegroundColor Cyan

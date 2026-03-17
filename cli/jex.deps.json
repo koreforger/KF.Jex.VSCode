@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v10.0": {
       "jex/1.0.0": {
         "dependencies": {
-          "Khaos.JEX": "1.0.0",
+          "KhaosKode.JEX": "1.0.0",
           "Newtonsoft.Json": "13.0.4",
           "System.CommandLine": "2.0.0-beta4.22272.1"
         },
@@ -73,12 +73,12 @@
           }
         }
       },
-      "Khaos.JEX/1.0.0": {
+      "KhaosKode.JEX/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.4"
         },
         "runtime": {
-          "Khaos.JEX.dll": {
+          "KhaosKode.JEX.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -106,7 +106,7 @@
       "path": "system.commandline/2.0.0-beta4.22272.1",
       "hashPath": "system.commandline.2.0.0-beta4.22272.1.nupkg.sha512"
     },
-    "Khaos.JEX/1.0.0": {
+    "KhaosKode.JEX/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
