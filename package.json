@@ -1,12 +1,12 @@
 {
-  "name": "khaos-jex",
-  "displayName": "Khaos JEX",
+  "name": "koreforge-jex",
+  "displayName": "KoreForge JEX",
   "description": "Language support for the JEX JSON transformation DSL",
   "version": "0.2.0",
-  "publisher": "khaos",
+  "publisher": "koreforger",
   "repository": {
     "type": "git",
-    "url": "https://github.com/khaos/KhaosKode.Jex"
+    "url": "https://github.com/koreforger/KF.Jex.VSCode"
   },
   "license": "MIT",
   "engines": {
