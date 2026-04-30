@@ -32,7 +32,7 @@ Write-Host "Installing JEX VS Code Extension" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 
 # Find existing vsix or build new one
-$vsixFile = Get-ChildItem -Path $artifactsDir -Filter "khaos-jex-*.vsix" -ErrorAction SilentlyContinue | 
+$vsixFile = Get-ChildItem -Path $artifactsDir -Filter "koreforge-jex-*.vsix" -ErrorAction SilentlyContinue | 
     Sort-Object LastWriteTime -Descending | 
     Select-Object -First 1
 
@@ -41,7 +41,7 @@ if (-not $NoBuild -or -not $vsixFile) {
     & (Join-Path $scriptDir "pack.ps1")
     if ($LASTEXITCODE -ne 0) { throw "Build failed" }
     
-    $vsixFile = Get-ChildItem -Path $artifactsDir -Filter "khaos-jex-*.vsix" | 
+    $vsixFile = Get-ChildItem -Path $artifactsDir -Filter "koreforge-jex-*.vsix" | 
         Sort-Object LastWriteTime -Descending | 
         Select-Object -First 1
 }
@@ -55,7 +55,7 @@ Write-Host "  File: $($vsixFile.Name)" -ForegroundColor Gray
 
 if ($Force) {
     Write-Host "  Uninstalling existing version..." -ForegroundColor Gray
-    code --uninstall-extension KhaosKode.khaos-jex 2>$null
+    code --uninstall-extension koreforger.koreforge-jex 2>$null
 }
 
 code --install-extension $vsixFile.FullName

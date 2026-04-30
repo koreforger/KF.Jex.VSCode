@@ -1,4 +1,4 @@
-# Khaos JEX - VS Code Extension
+# KoreForge JEX - VS Code Extension
 
 Language support for the **JEX JSON transformation DSL** in Visual Studio Code.
 
@@ -117,6 +117,6 @@ MIT License - See [LICENSE.md](LICENSE.md)
 
 ## Related Projects
 
-- [KhaosKode.JEX](../KhaosKode.Jex/) - Core JEX library
-- [KhaosKode.JEX.LanguageServer](../KhaosKode.JEX.LanguageServer/) - Language Server implementation
-- [KhaosKode.JEX.Cli](../KhaosKode.JEX.Cli/) - Command-line interface
+- [KoreForge.Jex](../KoreForge.Jex/) - Core JEX library
+- [KF.Jex.LanguageServer](../KF.Jex.LanguageServer/) - Language Server implementation
+- [KF.Jex.Cli](../KF.Jex.Cli/) - Command-line interface

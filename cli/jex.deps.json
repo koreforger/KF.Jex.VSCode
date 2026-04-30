@@ -8,12 +8,23 @@
     ".NETCoreApp,Version=v10.0": {
       "jex/1.0.0": {
         "dependencies": {
-          "KhaosKode.JEX": "1.0.0",
+          "KoreForge.Jex": "0.0.11-alpha",
           "Newtonsoft.Json": "13.0.4",
           "System.CommandLine": "2.0.0-beta4.22272.1"
         },
         "runtime": {
           "jex.dll": {}
+        }
+      },
+      "KoreForge.Jex/0.0.11-alpha": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.4"
+        },
+        "runtime": {
+          "lib/net10.0/KF.Jex.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.11.0"
+          }
         }
       },
       "Newtonsoft.Json/13.0.4": {
@@ -72,17 +83,6 @@
             "locale": "zh-Hant"
           }
         }
-      },
-      "KhaosKode.JEX/1.0.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.4"
-        },
-        "runtime": {
-          "KhaosKode.JEX.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
       }
     }
   },
@@ -91,6 +91,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "KoreForge.Jex/0.0.11-alpha": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+gpwtEbS2DCgGydITeezsQAq2P+pdbtsWQvplOpjG4kwiqVAV2m8CBkMRpGyOQk96yXZne7b5JBjyUUEW+Wqnw==",
+      "path": "koreforge.jex/0.0.11-alpha",
+      "hashPath": "koreforge.jex.0.0.11-alpha.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.4": {
       "type": "package",
@@ -105,11 +112,6 @@
       "sha512": "sha512-1uqED/q2H0kKoLJ4+hI2iPSBSEdTuhfCYADeJrAqERmiGQ2NNacYKRNEQ+gFbU4glgVyK8rxI+ZOe1onEtr/Pg==",
       "path": "system.commandline/2.0.0-beta4.22272.1",
       "hashPath": "system.commandline.2.0.0-beta4.22272.1.nupkg.sha512"
-    },
-    "KhaosKode.JEX/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

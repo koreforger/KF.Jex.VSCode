@@ -64,7 +64,7 @@ try {
     }
 
     # Package
-    $outputPath = Join-Path $artifactsDir "khaos-jex-$Version.vsix"
+    $outputPath = Join-Path $artifactsDir "koreforge-jex-$Version.vsix"
     npx @vscode/vsce package --out $outputPath
     if ($LASTEXITCODE -ne 0) { throw "Packaging failed" }
 

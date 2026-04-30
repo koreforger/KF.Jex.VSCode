@@ -22,7 +22,7 @@ $startLocation = Get-Location
 try {
     $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
     $rootDir = Split-Path -Parent $scriptDir
-    $jexRootDir = Split-Path -Parent $rootDir
+    $workspaceRoot = Split-Path -Parent $rootDir
     $vsCodeDir = $rootDir
 
     Write-Host "========================================" -ForegroundColor Cyan
@@ -33,8 +33,8 @@ try {
         (Join-Path $vsCodeDir "out"),
         (Join-Path $vsCodeDir "server"),
         (Join-Path $vsCodeDir ".vscode-test"),
-        (Join-Path $jexRootDir "TestResults"),
-        (Join-Path $jexRootDir "artifacts")
+        (Join-Path $workspaceRoot "TestResults"),
+        (Join-Path $workspaceRoot "artifacts")
     )
 
     if ($All) {
@@ -57,7 +57,7 @@ try {
     }
 
     # Clean Language Server build artifacts
-    $serverDir = Join-Path $jexRootDir "src" "KhaosKode.JEX.LanguageServer"
+    $serverDir = Join-Path $workspaceRoot "KF.Jex.LanguageServer" "src" "KF.Jex.LanguageServer"
     $serverFolders = @(
         (Join-Path $serverDir "bin"),
         (Join-Path $serverDir "obj")
@@ -71,7 +71,7 @@ try {
     }
 
     # Clean Language Server Test artifacts
-    $serverTestDir = Join-Path $jexRootDir "tests" "KhaosKode.JEX.LanguageServer.Tests"
+    $serverTestDir = Join-Path $workspaceRoot "KF.Jex.LanguageServer" "tst" "KF.Jex.LanguageServer.Tests"
     $testFolders = @(
         (Join-Path $serverTestDir "bin"),
         (Join-Path $serverTestDir "obj")

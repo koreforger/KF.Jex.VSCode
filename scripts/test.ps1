@@ -30,10 +30,10 @@ $startLocation = Get-Location
 try {
     $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
     $rootDir = Split-Path -Parent $scriptDir
-    $jexRootDir = Split-Path -Parent $rootDir
-    $vsCodeDir = Join-Path $jexRootDir "KhaosKode.Jex.VSCode"
-    $serverTestDir = Join-Path $jexRootDir "tests" "KhaosKode.JEX.LanguageServer.Tests"
-    $testResultsDir = Join-Path $jexRootDir "TestResults"
+    $workspaceRoot = Split-Path -Parent $rootDir
+    $vsCodeDir = $rootDir
+    $serverTestDir = Join-Path $workspaceRoot "KF.Jex.LanguageServer" "tst" "KF.Jex.LanguageServer.Tests"
+    $testResultsDir = Join-Path $workspaceRoot "TestResults"
 
     Write-Host "========================================" -ForegroundColor Cyan
     Write-Host "Running JEX Extension Tests" -ForegroundColor Cyan
