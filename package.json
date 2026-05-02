@@ -6,7 +6,7 @@
   "publisher": "koreforger",
   "repository": {
     "type": "git",
-    "url": "https://github.com/koreforger/KF.Jex.VSCode"
+    "url": "https://github.com/koreforger/KoreForge.Jex.VSCode"
   },
   "license": "MIT",
   "engines": {

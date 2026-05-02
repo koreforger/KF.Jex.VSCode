@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "KF.Jex.LanguageServer/1.0.0": {
+      "KoreForge.Jex.LanguageServer/1.0.0": {
         "dependencies": {
           "KoreForge.Jex": "0.0.11-alpha",
           "Microsoft.Extensions.Logging.Console": "9.0.0",
           "OmniSharp.Extensions.LanguageServer": "0.19.9"
         },
         "runtime": {
-          "KF.Jex.LanguageServer.dll": {}
+          "KoreForge.Jex.LanguageServer.dll": {}
         }
       },
       "KoreForge.Jex/0.0.11-alpha": {
@@ -21,7 +21,7 @@
           "Newtonsoft.Json": "13.0.4"
         },
         "runtime": {
-          "lib/net10.0/KF.Jex.dll": {
+          "lib/net10.0/KoreForge.Jex.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.11.0"
           }
@@ -377,7 +377,7 @@
     }
   },
   "libraries": {
-    "KF.Jex.LanguageServer/1.0.0": {
+    "KoreForge.Jex.LanguageServer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

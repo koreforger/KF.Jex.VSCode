@@ -26,8 +26,8 @@ try {
     $rootDir = Split-Path -Parent $scriptDir
     $vsCodeDir = $rootDir
     $workspaceRoot = Split-Path -Parent $rootDir
-    $serverProjectDir = Join-Path $workspaceRoot "KF.Jex.LanguageServer" "src" "KF.Jex.LanguageServer"
-    $cliProjectDir = Join-Path $workspaceRoot "KF.Jex.Cli" "src" "KF.Jex.Cli"
+    $serverProjectDir = Join-Path $workspaceRoot "KoreForge.Jex.LanguageServer" "src" "KoreForge.Jex.LanguageServer"
+    $cliProjectDir = Join-Path $workspaceRoot "KoreForge.Jex.Cli" "src" "KoreForge.Jex.Cli"
 
     Write-Host "========================================" -ForegroundColor Cyan
     Write-Host "Building JEX VS Code Extension" -ForegroundColor Cyan

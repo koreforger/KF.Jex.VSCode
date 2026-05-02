@@ -32,7 +32,7 @@ try {
     $rootDir = Split-Path -Parent $scriptDir
     $workspaceRoot = Split-Path -Parent $rootDir
     $vsCodeDir = $rootDir
-    $serverTestDir = Join-Path $workspaceRoot "KF.Jex.LanguageServer" "tst" "KF.Jex.LanguageServer.Tests"
+    $serverTestDir = Join-Path $workspaceRoot "KoreForge.Jex.LanguageServer" "tst" "KoreForge.Jex.LanguageServer.Tests"
     $testResultsDir = Join-Path $workspaceRoot "TestResults"
 
     Write-Host "========================================" -ForegroundColor Cyan

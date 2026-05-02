@@ -241,13 +241,13 @@ function startLanguageServer(context: vscode.ExtensionContext): void {
     if (!serverPath) {
         // Use bundled server
         serverPath = context.asAbsolutePath(
-            path.join('server', 'KF.Jex.LanguageServer.exe')
+            path.join('server', 'KoreForge.Jex.LanguageServer.exe')
         );
         
         // On non-Windows, use the dll with dotnet
         if (process.platform !== 'win32') {
             serverPath = context.asAbsolutePath(
-                path.join('server', 'KF.Jex.LanguageServer.dll')
+                path.join('server', 'KoreForge.Jex.LanguageServer.dll')
             );
         }
     }

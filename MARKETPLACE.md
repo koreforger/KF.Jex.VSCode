@@ -1,4 +1,4 @@
-# Publishing KF.Jex.VSCode to the Visual Studio Marketplace
+# Publishing KoreForge.Jex.VSCode to the Visual Studio Marketplace
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@
 npm install -g @vscode/vsce
 
 # Navigate to the extension directory
-cd KF.Jex.VSCode
+cd KoreForge.Jex.VSCode
 
 # Log in with your publisher credentials
 vsce login koreforger
@@ -69,7 +69,7 @@ name: Publish VS Code Extension
 on:
   push:
     tags:
-      - 'KF.Jex.VSCode/v*'
+      - 'KoreForge.Jex.VSCode/v*'
 
 jobs:
   publish:
@@ -94,12 +94,12 @@ Set `VSCE_PAT` as a repository secret in GitHub (Settings → Secrets → Action
 ## Verification
 
 After publishing, your extension will appear at:
-`https://marketplace.visualstudio.com/items?itemName=koreforger.kf-jex-vscode`
+`https://marketplace.visualstudio.com/items?itemName=koreforger.koreforge-jex-vscode`
 
 It takes a few minutes for the listing to propagate.
 
 ## Notes
 
-- The `package.json` already has the publisher set to `koreforger` and the repository URL pointing to `https://github.com/koreforger/KF.Jex.VSCode`.
+- The `package.json` already has the publisher set to `koreforger` and the repository URL pointing to `https://github.com/koreforger/KoreForge.Jex.VSCode`.
 - Make sure `README.md`, `CHANGELOG.md`, and the icon file exist before publishing — the marketplace will display them.
-- To unpublish: `vsce unpublish koreforger.kf-jex-vscode`
+- To unpublish: `vsce unpublish koreforger.koreforge-jex-vscode`

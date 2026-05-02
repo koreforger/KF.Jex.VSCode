@@ -57,7 +57,7 @@ try {
     }
 
     # Clean Language Server build artifacts
-    $serverDir = Join-Path $workspaceRoot "KF.Jex.LanguageServer" "src" "KF.Jex.LanguageServer"
+    $serverDir = Join-Path $workspaceRoot "KoreForge.Jex.LanguageServer" "src" "KoreForge.Jex.LanguageServer"
     $serverFolders = @(
         (Join-Path $serverDir "bin"),
         (Join-Path $serverDir "obj")
@@ -71,7 +71,7 @@ try {
     }
 
     # Clean Language Server Test artifacts
-    $serverTestDir = Join-Path $workspaceRoot "KF.Jex.LanguageServer" "tst" "KF.Jex.LanguageServer.Tests"
+    $serverTestDir = Join-Path $workspaceRoot "KoreForge.Jex.LanguageServer" "tst" "KoreForge.Jex.LanguageServer.Tests"
     $testFolders = @(
         (Join-Path $serverTestDir "bin"),
         (Join-Path $serverTestDir "obj")

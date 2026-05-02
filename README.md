@@ -118,5 +118,5 @@ MIT License - See [LICENSE.md](LICENSE.md)
 ## Related Projects
 
 - [KoreForge.Jex](../KoreForge.Jex/) - Core JEX library
-- [KF.Jex.LanguageServer](../KF.Jex.LanguageServer/) - Language Server implementation
-- [KF.Jex.Cli](../KF.Jex.Cli/) - Command-line interface
+- [KoreForge.Jex.LanguageServer](../KoreForge.Jex.LanguageServer/) - Language Server implementation
+- [KoreForge.Jex.Cli](../KoreForge.Jex.Cli/) - Command-line interface
